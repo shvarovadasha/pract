@@ -1,25 +1,30 @@
 #include <stdio.h>
-
-int main() {
+ 
+//1. Разработать, используя цикл while и не вводя массивы, программу обработки последовательности чисел.
+//Определить количество чисел последовательности, делителем которых является её первый член. 
+//Окончание ввода – отрицательное число. 
+ 
+int main() 
+{
     int number;
-    int first_element;
+    int firstElement; //переменная первого элемента
     int count = 0;
     
     printf("Enter the first number: "); //ввод первого числа
-    scanf("%d", &first_element);
+    scanf("%d", &firstElement);
     
     printf("Enter subsequent numbers (enter a negative number to finish): "); //ввод последующего числа и обработка последовательности
-    scanf("%d", &number);
+    scanf("%d", &number); 
     
-    while (number >= 0) {
-        if (number % first_element == 0)  //проверка делится ли число на первый элемент нацело
+    while (number >= 0) //цикл выполняющийся пока введенное число не является отрицательным
+	{
+        if (number % firstElement == 0)  //проверка делится ли число на первый элемент нацело
 		{ 
-            count++; 
+            count++; //если делится, то увеличиваем значение счетчика count
         }
         scanf("%d", &number);  //ввод следующего числа
     }
     
-    //вывод результата
-    printf("Count of numbers divisible by the first element: %d\n", count);
+    printf("Count of numbers divisible by the first element: %d\n", count);  //вывод количества чисел, делящихся нацело на первый элемент
     return 0;
 }
